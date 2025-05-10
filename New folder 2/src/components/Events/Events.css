@@ -1,0 +1,292 @@
+.event-card {
+  border: none; /* Remove default border */
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  color: black; /* Set text color to black */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+  background: linear-gradient(145deg, #ffffff 0%, #e9ecef 100%);
+}
+
+.event-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  position: relative;
+  color: black;
+}
+
+.event-header h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: black; /* Set text color to black */
+  transition: all 0.3s ease;
+}
+
+.event-header h3:hover {
+  transform: scale(1.02);
+}
+
+.event-header .prize {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: black; /* Set text color to black */
+  background: white; /* Change background to maintain contrast */
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.event-header .prize:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.event-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  color: black; /* Set text color to black */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  animation: slideDown 0.4s ease-in-out;
+}
+
+.event-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-image:hover {
+  transform: scale(1.02);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ripple effect on click */
+.event-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.event-card:active::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .event-card {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
+  .event-header h3 {
+    font-size: 1.1em;
+  }
+
+  .event-header .prize {
+    font-size: 0.9em;
+    padding: 4px 10px;
+  }
+
+  .event-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* General styling for the tabs container */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for individual tab buttons */
+.tabs button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: black; /* Set text color to black */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for tabs */
+.tabs button:hover {
+  background-color: #007bff;
+  color: black; /* Keep text black */
+}
+
+/* Active tab styling */
+.tabs button.active {
+  background-color: #0056b3;
+  color: black; /* Keep text black */
+  border-color: #0056b3;
+}
+
+/* Focus effect for accessibility */
+.tabs button:focus {
+  outline: none;
+  box-shadow: 0 0 5px black;
+}
+.events-container h1,h2 {
+  font-size: 2.5rem;
+  color: #1e40af;
+  margin-bottom: 20px;
+}
+.register-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Vertical and horizontal padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.register-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.register-button:active {
+  background-color: #3d8b40; /* Even darker when clicked */
+}
+
+/* Optional: Disabled state */
+.register-button:disabled {
+  background-color: #cccccc; /* Gray when disabled */
+  cursor: not-allowed; /* Disabled cursor */
+  opacity: 0.7; /* Slightly faded */
+}
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 5px;
+}
+.event-card {
+  position: relative; /* Added for positioning the button */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+  margin-top: 15px;
+}
+
+.openbutton {
+  position: absolute; /* Position absolute to move it to the right */
+  top: 20px; /* Adjust distance from top */
+  right: 20px; /* Align to right corner */
+  
+  /* Stylish button design */
+  padding: 8px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded edges */
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.register-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Active/Click effect */
+.register-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the button stays above other content */
+.event-card .event-details {
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust other elements if needed */
+.event-name {
+  margin: 0 0 10px 0;
+  padding-right: 100px; /* Prevent text from overlapping with button */
+}
+
+.openbutton {
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .register-button {
+    position: static; /* Reset to static on smaller screens */
+    margin-top: 15px;
+    width: 100%; /* Full width on mobile */
+  }
+  
+  .event-name {
+    padding-right: 0; /* Reset padding on mobile */
+  }
+}
